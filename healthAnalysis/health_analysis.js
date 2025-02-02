@@ -1,8 +1,7 @@
 const addPatientButton = document.getElementById("addPatient");
 const report = document.getElementById("report");
-const btnsearch = document.getElementById("btnSearch")
+const btnSearch = document.getElementById('btnSearch');
 const patients = [];
-
 function addPatient() {
     const name = document.getElementById("name").value;
     const gender = document.querySelector('input[name="gender"]:checked');
@@ -15,14 +14,12 @@ function addPatient() {
       generateReport();
     }
 }
-
 function resetForm() {
-    document.getElementById("name") = '';
+    document.getElementById("name").value = "";
     document.querySelector('input[name="gender"]:checked').checked = false;
     document.getElementById("age").value = "";
     document.getElementById("condition").value = "";
 }
-
 function generateReport() {
     const numPatients = patients.length;
     const conditionsCount = {
@@ -64,4 +61,3 @@ function generateReport() {
 }
 
 addPatientButton.addEventListener("click", addPatient);
-
